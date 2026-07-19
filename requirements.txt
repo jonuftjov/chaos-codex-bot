@@ -1,0 +1,16 @@
+python-telegram-bot
+Flask
+Flask-Cors
+protobuf
+pycryptodome
+httpx
+cachetools
+gunicorn
+requests
+apscheduler
+Pillow
+psutil
+PyJWT
+urllib3
+flask[async]
+protobuf-decoder
