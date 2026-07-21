@@ -3,6 +3,7 @@ import logging
 import socket
 import io
 import base64
+import os
 from telegram import Update, InputFile
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
 from app import fetch_player_raw, format_response, generate_banner_png, generate_outfit_png
@@ -15,7 +16,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-TOKEN = "8970798772:AAExhAZkzvlks19uGBqEflinlv-FDEDrj_E"
+# جلب التوكن من متغيرات البيئة (Secrets)
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8970798772:AAExhAZkzvlks19uGBqEflinlv-FDEDrj_E")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     welcome_msg = (
